@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Acada Learning Releases Nexus Repository</name>
-	      <url>http://3.91.76.247:8/bankoles-release/</url>
+	      <url>http://35.175.186.28:9000/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Acada Learning Snapshot Nexus Repository</name>
-	      <url>http://3.91.76.247bankoles-snapshot/</url>
+	      <url><http://35.175.186.28:9000//url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
@@ -112,7 +112,7 @@
 		<finalName>maven-web-app</finalName>
 		
 		<plugins>
-			<plugin>
+			<plugin>http://35.175.186.28:9000/
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.3</version>
