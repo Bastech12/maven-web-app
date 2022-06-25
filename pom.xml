@@ -103,7 +103,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Acada Learning Snapshot Nexus Repository</name>
-	      <url><http://35.175.186.28:9000//url>
+	      <url>http://35.175.186.28:9000/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
