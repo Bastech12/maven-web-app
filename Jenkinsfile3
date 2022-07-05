@@ -1,0 +1,33 @@
+node(""){
+	
+def MHD = tool name: "Maven3.8.4"
+
+stage ("1.gitclone"){
+	git "https://github.com/Bastech12/maven-web-app.git"
+}
+
+stage ("2.build"){
+    sh	"$MHD/bin/mvn package"
+}
+stage ("3.codetest"){
+	sh	"$MHD/bin/mvn sonar:sonar"
+}
+stage ("4.safeatrtifat"){
+	sh	"$MHD/bin/mvn deploy"
+}
+
+
+stage ("7.deploytostaging"){
+    deploy adapters: [tomcat9(credentialsId: 'tomcat-password', path: '', url: 'http://172.31.22.242:8080/')], contextPath: null, war: 'target/*.war'	
+}
+
+stage ("6.approval")
+timeout(time: 5, unit: 'DAYS') {
+    input message: 'Approval for project'
+}
+
+stage ("5.deploytoprod"){
+    deploy adapters: [tomcat9(credentialsId: 'tomcat-password', path: '', url: 'http://172.31.22.242:8080/')], contextPath: null, war: 'target/*.war'
+}
+
+}
